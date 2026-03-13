@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Que dia é hoje?</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #eef2f7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-top: 8px solid #3498db;
+        }
+        h2 { color: #2c3e50; margin-bottom: 10px; }
+        #data-hoje {
+            font-size: 1.5rem;
+            color: #34495e;
+            font-weight: bold;
+            background: #d1ecf1;
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        .btn-voltar {
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sobre o Tempo</h2>
+        <p>Você acessou para saber o dia atual:</p>
+        <div id="data-hoje"></div>
+        <br>
+        <a href="/home" class="btn-voltar">← Voltar para Home</a>
+    </div>
+
+    <script>
+        // Script simples para pegar a data do sistema do usuário
+        const elementoData = document.getElementById('data-hoje');
+        const hoje = new Date();
+        const opcoes = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        elementoData.innerText = hoje.toLocaleDateString('pt-BR', opcoes);
+    </script>
+</body>
+</html>
